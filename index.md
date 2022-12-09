@@ -20,6 +20,8 @@ nav_order: 1
 
 ## Abstract
 
+## Features
+
 ## Demo Video
 
 ## Authors

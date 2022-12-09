@@ -4,6 +4,3 @@ theme: just-the-docs
 
 url: https://students.cs.ucl.ac.uk
 baseurl: /2022/group32
-
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template

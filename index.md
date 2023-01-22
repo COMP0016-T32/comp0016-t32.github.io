@@ -1,28 +1,13 @@
 ---
-title: Overview
+title: MotionInput 3.2 - Team 32
 layout: home
-nav_order: 1
+description: website.
+intro_image: "images/illustrations/pointing.svg"
+intro_image_absolute: true
+intro_image_hide_on_mobile: true
+show_call_box: false
 ---
 
-# MI 3.2 Interactive Care homes
-{: .no_toc }
+# UCL MI 3.2 Feet-Based Combination of Interactions.
 
-!TODO: Brief description of the project
-{: .fs-6 .fw-300 }
-
-## Abstract
-
-## Features
-
-## Demo Video
-
-## Authors
-
-### Tina Hou (Team Lead)
-
-### Abdurrahmaan Ali (Team Member)
-
-### Dongyeon Park (Team Member)
-
-### Minghui Cai (Team Member)
-
+A webcam-based accessibility gestures recognition system.

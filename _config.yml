@@ -1,6 +1,47 @@
-title: Team 32
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
-
+baseurl: '/2022/group32'
 url: https://students.cs.ucl.ac.uk
-baseurl: /2022/group32
+permalink: pretty
+title: 'MI 3.2 Team 32'
+
+# logo:
+#   mobile: "images/logo/logo-mobile.svg"
+#   mobile_height: "32px"
+#   mobile_width: "32px"
+#   desktop: "images/logo/logo.svg"
+#   desktop_height: "32px"
+#   desktop_width: "120px"
+
+home: 
+  limit_services: 6
+
+collections:
+  services:
+    output: true
+    sort_by: weight
+  team:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md

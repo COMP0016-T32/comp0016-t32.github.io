@@ -1,6 +1,6 @@
 [
   {
-    "title": "Free Consultation",
+    "title": "User manual",
     "description": "New clients receive an obligation free consultation.",
     "image": {
       "url": "images/features/noun_branding_1885335.svg",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "title": "Certified Accountants",
+    "title": "Deployment manual",
     "description": "All members of our team are certified accountants.",
     "image": {
       "url": "images/features/noun_The Process_1885341.svg",
@@ -18,7 +18,26 @@
     }
   },
   {
-    "title": "Tax Compliance",
+    "title": "Legal issues and processes",
+    "description": "We stay up to date on the latest changes to the tax code.",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Development Blog",
+    "description": "We stay up to date on the latest changes to the tax code.",
+    "url": "https://comp0016-t32.github.io/blog/",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Monthly Video",
     "description": "We stay up to date on the latest changes to the tax code.",
     "image": {
       "url": "images/features/noun_3d modeling_1885342.svg",

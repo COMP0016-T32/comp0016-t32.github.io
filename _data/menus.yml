@@ -29,8 +29,8 @@ main:
   - name: "Evaluation"
     url: "/evaluation/"
     weight: 9
-  - name: "Appendix"
-    url: "/appendix/"
+  - name: "Appendices"
+    url: "/appendices/"
     weight: 10
 
 footer:

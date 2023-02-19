@@ -3,7 +3,7 @@ title: Requirements
 layout: page
 description: Requirements
 ---
-
+  
 ## Project background and partner introduction
 UCL MotionInput was conceptualized during COVID-19 and the first version was released in early 2021. It was a touchless computing platform designed to reduce phyiscal touch when interacting with computers to prevent the spreading of disease. Over the next 2 years its functionality and purposes have been expanded and added to by UCL Computer Science students, supported by the NHS and companies such as Microsoft, IBM and Intel.
 This year, our group was tasked with contributing to version 3.2 of MotionInput, mainly towards facilitating elderly/disabled people in care homes with the ability to play different kinds of games using our gestures and accessiblity controls.
@@ -49,12 +49,12 @@ The two images below show the responses to the two most important questions in t
 
 Aoife enjoys playing video games and is enthusiastic about IT and science. She has level II cerebral palsy, meaning she has impaired postural control, specifically on her lower body, she can't get her knees too high or her legs fully straight. She enjoys K-pop dancing and has tried out many of the dance machines in the game arcade. However, since the dance games like Dance Dance Revolution require intense physical movement, she could not even start to play the games. Therefore, she signed up for our system and had her first experience with the virtual dance mat. MI 3.2 uses the coordinates of her ankles and the size of the pixels they occupy to determine the distance and depth of her feet's movement. Her movements of ankle, feet and legs will be mapped to 9 buttons in the virtual dance mat so that she can trigger all buttons within a capable distance of her. With the help of our system, she can play dance games like others, and she has a very enjoyable playing experience.​
 
-## Use cases(if applicable)
+## Use cases (if applicable)
 
 ### Use case diagram
 ### List of use cases
 
-## MoSCoW requirement list(Functional and non-functional)
+## MoSCoW requirement list
 
 ### Functional requirements:
 

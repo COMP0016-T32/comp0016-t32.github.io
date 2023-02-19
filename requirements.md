@@ -35,6 +35,8 @@ A2. Yes, considering that Covid has made practically the entire society go towar
 
 The two images below show the responses to the two most important questions in the questionnaire. With real-time data and feedback, we can gauge the potential needs and expectations of the users and clarify the product features to focus on when designing the prototype.​
 
+![Results](../images/results.png)
+
 ## Personas
 
 ![Persona1](../images/persona1.jpg)

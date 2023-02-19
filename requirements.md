@@ -5,8 +5,14 @@ description: Requirements
 ---
 
 ## Project background and partner introduction
+UCL MotionInput was conceptualized during COVID-19 and the first version was released in early 2021. It was a touchless computing platform designed to reduce phyiscal touch when interacting with computers to prevent the spreading of disease. Over the next 2 years its functionality and purposes have been expanded and added to by UCL Computer Science students, supported by the NHS and companies such as Microsoft, IBM and Intel.
+This year, our group was tasked with contributing to version 3.2 of MotionInput, mainly towards facilitating elderly/disabled people in care homes with the ability to play different kinds of games using our gestures and accessiblity controls.
+Our primary stakeholders are Prof. Dean Mohamedally (UCL Computer Science), John McNamara (IBM), Pippa Chick (Intel).
 
 ## Project Goals
+- Expand MotionInput to the lower body, adding gestures and controls for ankles and feet and 
+- a Virtual Dance Mat that can be tailored to user's needs and allows many games to be played
+- Add jitter compensation algorithm to current hands module of MotionInput to allow people with Parkinson's/severe essential tremor to benefit
 
 ## Requirement gathering
 
@@ -50,6 +56,24 @@ Aoife enjoys playing video games and is enthusiastic about IT and science. She h
 
 ## MoSCoW requirement list(Functional and non-functional)
 
-### A table for function requirements
+### Functional requirements:
 
-### Another table for non-functional requirements: [https://en.wikipedia.org/wiki/Non-functional_requirement](https://en.wikipedia.org/wiki/Non-functional_requirement). For example, performance, security, usability, open source, maintainability, extensibility, etc.
+| Requirement                                     | Priority |
+| ----------------------------------------------- | -------- |
+| Working virtual dance mat                       | Must     |
+| Allow users to play retro games                 | Must     |
+| Allow users to play fifa                        | Must     |
+| Allow users to use speech commands and one hand | Must     |
+| Algorithm for stabilizing hand jitter           | Must     |
+| Gestures & controls for feet and ankles         | Must     |
+| Kick height lines for fifa                      | Should   |
+
+### Non-functional requirements: 
+
+| Requirement                                         | Priority |
+| --------------------------------------------------- | -------- |
+| Compatible with MotionInput 3.2                     | Must     |
+| Easy to use/fun for average user                    | Must     |
+| Run on windows machines                             | Must     |
+| Easy to extend for future developers                | Must     |
+| Indicate virtual dance mat button presses on screen | Should   |

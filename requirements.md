@@ -51,10 +51,9 @@ The two images below show the responses to the two most important questions in t
 
 Aoife enjoys playing video games and is enthusiastic about IT and science. She has level II cerebral palsy, meaning she has impaired postural control, specifically on her lower body, she can't get her knees too high or her legs fully straight. She enjoys K-pop dancing and has tried out many of the dance machines in the game arcade. However, since the dance games like Dance Dance Revolution require intense physical movement, she could not even start to play the games. Therefore, she signed up for our system and had her first experience with the virtual dance mat. MI 3.2 uses the coordinates of her ankles and the size of the pixels they occupy to determine the distance and depth of her feet's movement. Her movements of ankle, feet and legs will be mapped to 9 buttons in the virtual dance mat so that she can trigger all buttons within a capable distance of her. With the help of our system, she can play dance games like others, and she has a very enjoyable playing experience.​
 
-## Use cases (if applicable)
-
-### Use case diagram
-### List of use cases
+## Use cases
+    
+![UseCases](../images/usecased.png)
 
 ## MoSCoW requirement list
 

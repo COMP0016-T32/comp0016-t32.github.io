@@ -51,30 +51,31 @@ The two images below show the responses to the two most important questions in t
 
 Aoife enjoys playing video games and is enthusiastic about IT and science. She has level II cerebral palsy, meaning she has impaired postural control, specifically on her lower body, she can't get her knees too high or her legs fully straight. She enjoys K-pop dancing and has tried out many of the dance machines in the game arcade. However, since the dance games like Dance Dance Revolution require intense physical movement, she could not even start to play the games. Therefore, she signed up for our system and had her first experience with the virtual dance mat. MI 3.2 uses the coordinates of her ankles and the size of the pixels they occupy to determine the distance and depth of her feet's movement. Her movements of ankle, feet and legs will be mapped to 9 buttons in the virtual dance mat so that she can trigger all buttons within a capable distance of her. With the help of our system, she can play dance games like others, and she has a very enjoyable playing experience.​
 
-## Use cases
-    
-![UseCases](../images/usecased.png)
+## Use cases (if applicable)
+
+### Use case diagram
+### List of use cases
 
 ## MoSCoW requirement list
 
 ### Functional requirements:
 
-| Requirement                                     | Priority |
-| ----------------------------------------------- | -------- |
-| Working virtual dance mat                       | Must     |
-| Allow users to play retro games                 | Must     |
-| Allow users to play fifa                        | Must     |
-| Allow users to use speech commands and one hand | Must     |
-| Algorithm for stabilizing hand jitter           | Must     |
-| Gestures & controls for feet and ankles         | Must     |
-| Kick height lines for fifa                      | Should   |
+| ID | Requirement                                     | Priority |
+| -- | ----------------------------------------------- | -------- |
+| 1  | Working virtual dance mat                       | Must     |
+| 2  | Allow users to play retro games                 | Must     |
+| 3  | Allow users to play fifa                        | Must     |
+| 4  | Allow users to use speech commands and one hand | Must     |
+| 5  | Algorithm for stabilizing hand jitter           | Must     |
+| 6  | Gestures & controls for feet and ankles         | Must     |
+| 7  | Kick height lines for fifa                      | Should   |
 
 ### Non-functional requirements: 
 
-| Requirement                                         | Priority |
-| --------------------------------------------------- | -------- |
-| Compatible with MotionInput 3.2                     | Must     |
-| Easy to use/fun for average user                    | Must     |
-| Run on windows machines                             | Must     |
-| Easy to extend for future developers                | Must     |
-| Indicate virtual dance mat button presses on screen | Should   |
+| ID | Requirement                                         | Priority |
+| -- | --------------------------------------------------- | -------- |
+| 8  | Compatible with MotionInput 3.2                     | Must     |
+| 9  | Easy to use/fun for average user                    | Must     |
+| 10 | Run on windows machines                             | Must     |
+| 11 | Easy to extend for future developers                | Must     |
+| 12 | Indicate virtual dance mat button presses on screen | Should   |

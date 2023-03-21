@@ -1,5 +1,4 @@
-baseurl: '/2022/group32'
-url: https://students.cs.ucl.ac.uk
+baseurl: '/'
 permalink: pretty
 title: 'MI 3.2 Team 32'
 

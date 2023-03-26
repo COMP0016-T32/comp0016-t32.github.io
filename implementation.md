@@ -124,14 +124,11 @@ Initially, the colour of the buttons is red when not activated and green when ac
 
 When we first replaced the original buttons with the images we designed, we found that the activation area of the buttons was much larger than the buttons themselves, which means the users can activate the buttons by moving their wrists close to the buttons instead of overlapping their wrists with the buttons. To correct the situation, we decreased the radius parameter in config.json so that the activation area is the same size as the images of the buttons.
 
- 
-***Original version of the in-air action buttons***
-
 ![](../images/original_inair_buttons.png)
+***Original version of the in-air action buttons***
  
-***Improved version of the in-air action buttons***
-
 ![](../images/improved_inair_buttons.png)
+***Improved version of the in-air action buttons***
 
 ## 2.2 New Display Key
 

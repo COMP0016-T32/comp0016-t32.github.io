@@ -24,6 +24,8 @@ This was our first idea to implement the leg gestures. However, there was a tiny
 
 There is no direct way to detect gestures unless you train a model with the gestures you want to detect. We discovered in two tracks: 1. Train a model with the gestures we want to detect 2. Use a library that can detect the lower body only.
 
+
+
 [TODO: FINISH this part]
 
 ## Comparison
@@ -44,6 +46,10 @@ Disadvantages using MediaPipe
   *	Comparison in several perspectives
 *	How to use MotionInput
 
+## Final decision
+
+
+
 # Hand Jitter Correction
 After some research, it has been found that there are various object tracking smoothing methods available for use, depending on the type of system and the nature of the noise present. Some of the commonly used tracking methods include:
 
@@ -56,7 +62,7 @@ After some research, it has been found that there are various object tracking sm
 
 ## Laplacian Smoothing
 
-Laplacian smoothing is a method used to make guesses or predictions when there isn't a lot of information available, and it helps to make the guesses more accurate.
+Laplacian smoothing [2, 3] is a method used to make guesses or predictions when there isn't a lot of information available, and it helps to make the guesses more accurate.
 
 Laplacian smoothing, also known as add-k smoothing or additive smoothing, is a technique used in probability theory and statistics to smooth categorical data by adding a small value (\\(k\\)) to the frequency of each category.
 

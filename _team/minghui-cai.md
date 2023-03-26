@@ -2,7 +2,7 @@
 title: "Minghui Cai"
 date: 2018-11-19T10:47:58+10:00
 image: "images/team/minghui.jpeg"
-jobtitle: "Lead Developer / Client Liaison / Report Editor"
+jobtitle: "Lead Developer / Tester / Report Editor"
 linkedinurl: "https://www.linkedin.com/in/minghui-cai/"
 promoted: true
 weight: 2

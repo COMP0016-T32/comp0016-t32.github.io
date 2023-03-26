@@ -1,6 +1,6 @@
 ---
 layout: default
-bodyClass: "page-home"
+bodyClass: 'page-home'
 ---
 
 <div class="intro">
@@ -13,10 +13,14 @@ bodyClass: "page-home"
         {% endif %} -->
       </div>
       {% if page.intro_image %}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt="{{ page.title }}"
+      <div
+        class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative"
+      >
+        <img
+          alt="{{ page.title }}"
           class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}"
-          src="{{ page.intro_image | relURL }}" />
+          src="{{ page.intro_image | relURL }}"
+        />
       </div>
       {% endif %}
     </div>
@@ -24,28 +28,50 @@ bodyClass: "page-home"
 </div>
 
 <!-- Abstract -->
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+<div class="container pb-3 pt-3 pt-md-5 pb-md-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-12">
       <div class="service service-single">
         <h1>Abstract</h1>
         <div class="content">
-          <p>Our team is part of the MotionInput (MI) V3.2, and our innovative Feet Navigation project
-            aims to enhance the accessibility of gaming for people with limited upper-body movements.</p>
-          <p>FeetNav is the first ever lower body focused module in MI, we use the metaphor of a dance-mat based game as a
-            controller interface, allowing people to navigate a cursor to control the browser, or move a game character in
-            games by placing their feet in forward, backward, left, and right motions.</p>
-          <p>In addition to enhancing accessibility for people with disabilities, our project also provides a fun way for
-            children, elderly people, or patients in rehabilitation to exercise their lower body muscles. By using our
-            software, they can enjoy their favourite games while also engaging in physical activity.</p>
+          <p>
+            Our team is part of the MotionInput (MI) V3.2, and our innovative
+            Feet Navigation project aims to enhance the accessibility of gaming
+            for people with limited upper-body movements.
+          </p>
+          <p>
+            FeetNav is the first ever lower body focused module in MI, we use
+            the metaphor of a dance-mat based game as a controller interface,
+            allowing people to navigate a cursor to control the browser, or move
+            a game character in games by placing their feet in forward,
+            backward, left, and right motions.
+          </p>
+          <p>
+            In addition to enhancing accessibility for people with disabilities,
+            our project also provides a fun way for children, elderly people, or
+            patients in rehabilitation to exercise their lower body muscles. By
+            using our software, they can enjoy their favourite games while also
+            engaging in physical activity.
+          </p>
         </div>
         <h1>Features</h1>
         <h3>Gaming With Your Feet (Game mode of virtual dance-mat)</h3>
-        <p>Use a dance-mat like interface, allowing users to play games with only feet. Use your foot gestures to trigger the keys on keyboard and move characters in any direction.</p>
+        <p>
+          Use a dance-mat like interface, allowing users to play games with only
+          feet. Use your foot gestures to trigger the keys on keyboard and move
+          characters in any direction.
+        </p>
         <h3>Browser Controller (Mouse mode of virtual dance-mat)</h3>
-        <p>When triggering the corresponding arrow button with foot gesture, it’s able move the cursor up, down, left and right.</p>
+        <p>
+          When triggering the corresponding arrow button with foot gesture, it’s
+          able move the cursor up, down, left and right.
+        </p>
         <h3>Combinations with existing features in MI</h3>
-        <p>It is possible to incorporate personalised combinations of gesture controls from different body parts (additional to FeetNav), such as using hand gestures to trigger in-air buttons.</p>
+        <p>
+          It is possible to incorporate personalised combinations of gesture
+          controls from different body parts (additional to FeetNav), such as
+          using hand gestures to trigger in-air buttons.
+        </p>
       </div>
     </div>
   </div>
@@ -53,34 +79,46 @@ bodyClass: "page-home"
 
 <!-- Youtube Video -->
 <div class="strip strip-grey">
-  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+  <div class="container pt-3 pb-3 pt-md-5 pb-md-5">
+    <h1 class="row justify-content-center">Project Introduction Video</h1>
     <div class="row justify-content-center">
-      <iframe width="560" height="315" src="https://youtu.be/p0nkcKAdiew" title="YouTube video player"
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/p0nkcKAdiew"
+        title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </div>
 
 <!-- Team Members -->
-<div class="container pt-6 pb-6">
+<div class="container pt-3 pb-3">
   <div class="row">
-    {% assign teams = site.team | sort: "weight" %}
-    {% for team in teams %}
+    {% assign teams = site.team | sort: "weight" %} {% for team in teams %}
     <div class="col-12 col-md-6 mb-2">
       <div class="team team-summary team-summary-large">
         {% if team.image %}
         <div class="team-image">
-          <img width="90" height="90" alt="{{ team.title }}" class="img-fluid mb-2"
-            src="{{ team.image | relative_url }}" />
+          <img
+            width="90"
+            height="90"
+            alt="{{ team.title }}"
+            class="img-fluid mb-2"
+            src="{{ team.image | relative_url }}"
+          />
         </div>
         {% endif %}
         <div class="team-meta">
-          <h2 class="team-name"><a href="{{ team.url | relative_url }}">{{ team.title }}</a></h2>
+          <h2 class="team-name">{{ team.title }}</h2>
           <p class="team-description">{{ team.jobtitle }}</p>
           {% if team.linkedinurl %}
-          <a target="_blank" href="{{ team.linkedinurl }}" rel="noreferrer">LinkedIn</a>
+          <a target="_blank" href="{{ team.linkedinurl }}" rel="noreferrer"
+            >LinkedIn</a
+          >
           {% endif %}
         </div>
         <div class="team-content">{{ team.content | truncate: 120 }}</div>
@@ -92,13 +130,13 @@ bodyClass: "page-home"
 
 <!-- Project Management -->
 <div class="strip strip-grey">
-  <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="container pb-3 pt-3 pt-md-5 pb-md-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-12">
         <div class="service service-single">
           <h1>Project Management</h1>
           <div class="content img-fluid">
-            <img src="images/gantt-chart.png" alt="gantt chart">
+            <img src="images/gantt-chart.png" alt="gantt chart" />
           </div>
         </div>
       </div>

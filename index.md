@@ -8,6 +8,6 @@ intro_image_hide_on_mobile: true
 show_call_box: false
 ---
 
-# UCL MI 3.2 Feet-Based Combination of Interactions.
+# UCL MotionInput v3.2 FeetNav
 
-A webcam-based accessibility gestures recognition system.
+Feet based navigation for loss of arm limb users to play games

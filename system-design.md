@@ -3,8 +3,9 @@ title: System Design
 layout: page
 description: System Design
 ---
-  
-## System architecture
-  
-## Design principles and goals
-  
+
+![](../images/system_design1.png)
+
+[TODO: write a brief description of each component.]
+
+![](../images/system_design2.png)

@@ -11,27 +11,24 @@ main:
   - name: "Research"
     url: "/research/"
     weight: 3
-  - name: "Algorithms"
-    url: "/algorithms/"
-    weight: 4
   - name: "UI Design"
     url: "/ui-design/"
-    weight: 5
+    weight: 4
   - name: "System Design"
     url: "/system-design/"
+    weight: 5
+  - name: "Implementation"
+    url: "/implementation/"
     weight: 6
-  - name: "Impl."
-    url: "/impl/"
-    weight: 7
   - name: "Testing"
     url: "/testing/"
-    weight: 8
+    weight: 7
   - name: "Evaluation"
     url: "/evaluation/"
-    weight: 9
+    weight: 8
   - name: "Appendices"
     url: "/appendices/"
-    weight: 10
+    weight: 9
 
 footer:
   - name: "Home"

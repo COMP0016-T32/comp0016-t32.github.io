@@ -49,6 +49,16 @@ During development and after learning newer requirements, we found several ways 
 
 ![MainWindow](../images/ui_main_window.png)
 
-(screenshots of actual ui)
+In the main window, the users are able to choose from three modes. In the retro mode, the users can choose from a few controller templates that resemble the classic old-fashioned gamepads in real life, such as Nintendo NES and Sega Mega Drive. In the modern games mode, the users can create their own controller templates for the games they want to play. On the other hand, the mouse mode allows users to move the mouse cursor using the virtual dance mat and trigger mouse actions like left and right click, holding the left and right click, scrolling up and scrolling down using in-air action buttons. 
 
-(Description how it works)
+Moreover, the users have the option to turn on mouse tracking and choose to control mouse tracking using their left hands or right hands in the main window. At the same time, they can also choose the camera and to turn on or turn off FPS.
+
+![ButtonsWindow](../images/ui_buttons_window.png)
+
+When clicking on the In-Air Action Buttons button, the users will be led to the In-Air Action Buttons setting window. In this window, the users can choose to control the in-air action buttons using their left hands or right hands. Moreover, they can choose to select up to four in-air action buttons, the keys that the buttons trigger, whether to press the keys once or hold the keys, and the texts the buttons display. 
+
+![DanceMatWindow](../images/ui_dance_mat_window.png)
+
+When clicking on the Dance Mat Keys button, the Dance Mat Keys window will open. Similar to the In-Air Action Buttons window, the users can choose the keys the dance mat gestures trigger and whether to press the keys once or hold the keys.
+
+When implementing the user interface, we made sure that the user interface was consistent and simplified. Therefore, the configuration wizard is straightforward and easy to use.

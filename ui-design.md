@@ -47,6 +47,8 @@ This was the final version of the prototype. The arrows colored in light blue a
 
 During development and after learning newer requirements, we found several ways in which we needed to differ from the prototype.
 
+![MainWindow](../images/ui_main_window.png)
+
 (screenshots of actual ui)
 
 (Description how it works)

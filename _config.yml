@@ -11,6 +11,10 @@ title: 'MI FeetNav'
 #   desktop_height: "32px"
 #   desktop_width: "120px"
 
+markdown: kramdown
+kramdown:
+  math_engine: katex
+
 home: 
   limit_services: 6
 

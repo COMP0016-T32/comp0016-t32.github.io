@@ -23,28 +23,23 @@ This was our first idea to implement the leg gestures. However, there was a tiny
 ## Alternative Pose Estimation Libraries
 
 There is no direct way to detect gestures unless you train a model with the gestures you want to detect. We discovered in two tracks: 1. Train a model with the gestures we want to detect 2. Use a library that can detect the lower body only.
-
-
-
 [TODO: FINISH this part]
 
 ## Comparison
 
 Advantages using MediaPipe
-*	Can keep the consistency with the other existing modules that utilise MediaPipe’s solution modules (hand module, for example)
-*	Model is already implemented, and we can use landmarks provided by MediaPipe to determine gestures.
-*	Actively used in MotionInput already
+* Can keep the consistency with the other existing modules that utilise MediaPipe’s solution modules (hand module, for example)
+* Model is already implemented, and we can use landmarks provided by MediaPipe to determine gestures.
+* Actively used in MotionInput already
 
 Disadvantages using MediaPipe
-*	Impossible to capture lower body only
-*	
-
-*	How Dancemat works in DDR
-*	How do the existing other modules in MI work? (Investigation)
-*	How to implement it (idea upcoming)
-*	List up some usable libraries
-  *	Comparison in several perspectives
-*	How to use MotionInput
+* Impossible to capture lower body only
+* How Dancemat works in DDR
+* How do the existing other modules in MI work? (Investigation)
+* How to implement it (idea upcoming)
+* List up some usable libraries
+  * Comparison in several perspectives
+* How to use MotionInput
 
 ## Final decision
 
@@ -53,9 +48,9 @@ Disadvantages using MediaPipe
 # Hand Jitter Correction
 After some research, it has been found that there are various object tracking smoothing methods available for use, depending on the type of system and the nature of the noise present. Some of the commonly used tracking methods include:
 
-• Kalman filtering, suitable for systems with Gaussian noise (which is suitable for our case)
-• Particle filtering, which can handle non-linear and non-Gaussian noise
-• Laplacian smoothing is a technique used in image processing to reduce noise and smooth out edges by replacing the colour of each pixel with the average colour of its surrounding pixels.
+* Kalman filtering, suitable for systems with Gaussian noise (which is suitable for our case)
+* Particle filtering, which can handle non-linear and non-Gaussian noise
+* Laplacian smoothing is a technique used in image processing to reduce noise and smooth out edges by replacing the colour of each pixel with the average colour of its surrounding pixels.
 
 Each of these methods has its strengths and weaknesses, and the choice of method will depend on the specific requirements of the object being tracked. In our case for hand jitter correction, we have chosen to implement Laplacian smoothing and Gaussian filter.
 After some research, it has been found that there are various object tracking smoothing methods available for use, depending on the type of system and the nature of the noise present. Some of the commonly used tracking methods include:
@@ -86,8 +81,7 @@ where:
 
 Laplacian smoothing is a simple and effective technique, but it can also have some limitations. For example, it assumes that all categories are equally likely a priori, which may not be true in some cases. Additionally, the choice of the smoothing parameter \\(k\\) can have a significant impact on the results, and it may need to be tuned for each specific problem or dataset.
 
-![](../images/research_2_1.png)
-[1]
+![](../images/research_2_1.png) [1]
 
 **In our case, how to smooth a tracking curve?**
 ![](../images/research_2_2.png)
@@ -113,3 +107,11 @@ Overall, Gaussian filter can be a powerful tool for motion tracking, as it can e
 **Virtual Dance Mat Reference**
 
 **Hand Jitter Reference**
+
+[1] N. Xi, Y. Sun, L. Xiao, and G. Mei, "Designing Parallel Adaptive Laplacian Smoothing for Improving Tetrahedral Mesh Quality on the GPU," *Applied Sciences*, vol. 11, no. 12, p. 5543, Jun. 2021, doi: 10.3390/app11125543.
+
+[2] M. Desbrun, M. Meyer, P. Schröder, and A. H. Barr, "Implicit fairing of irregular meshes using diffusion and curvature flow," In *Proceedings of the 26th annual conference on Computer graphics and interactive techniques (SIGGRAPH '99)*, pp. 317–324, Jul 1999.
+
+[3] T. Zhou, H. Bhaskar, F. Liu, J. Yang, et al., "Graph regularized and locality-constrained coding for robust visual tracking," *IEEE Trans. Circuits Syst. Video Technol.*, vol. 27, no. 10, pp. 2153–2164, Oct. 2017.
+
+[4] D. Juric, "Object Tracking: Kalman Filter with Ease," *codeproject.com*, fig. 1, Jan. 15, 2015. [Online]. Available: https://www.codeproject.com/Articles/865935/Object-Tracking-Kalman-Filter-with-Ease. [Accessed Mar. 24, 2023].

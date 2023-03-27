@@ -12,7 +12,7 @@ Computers have become an integral part of the gaming entertainment, providing ga
 
 UCL MotionInput (MI) is a major software package launched globally for touchless computer interactions of nearly all ranges of human movement using just a webcam and PC. MI is a gesture and speech-based recognition layer for interacting with operating systems, applications, and games via just a webcam and PC. It is a pioneering touchless computing technology developed by UCL Computer Science students in collaboration with leading industry partners, Intel, Microsoft, IBM, Google, the NHS with Great Ormond Street Hospital for Children (GOSH DRIVE unit) and the UCLH Institute for Child Health.
 
-Our team are developing the first ever lower-body detection system upon the 3rd generation of UCL MotionInput.
+Our team developed the first ever lower-body detection system upon the 3rd generation of UCL MotionInput.
 
 # Client Introduction
 Our primary stakeholders are **Prof. Dean Mohamedally** (UCL Computer Science Professor) and **Sheena Visram** (Great Ormond Street Hospital/UCL).

@@ -98,8 +98,8 @@ In these tests, we define accuracy as the user’s action will be recognised as 
 
 Combining the results of the two tests, we developed the following algorithms for the four gestures.
 
-![](../images/foot_back.png)
-![](../images/foot_front.png)
+![](../images/foot_back_before.png)
+![](../images/foot_front_before.png)
 ![](../images/foot_right.png)
 ![](../images/foot_left.png)
 
@@ -107,15 +107,18 @@ Combining the results of the two tests, we developed the following algorithms fo
 
 After defining the criteria to determine if the gestures are active, we encountered another problem, which was the incorrect gesture would be triggered sometimes. For example, when the users move their leg forward, the leftward leg movement will be triggered instead. To solve the problem, we decided to add more conditions when determining the score for the gestures. In the end, we changed the algorithms so that the forward and backward leg movements will only be determined as active if they fulfil the criteria of the forward and backward leg movements and do not fulfil the criteria of the leftward and rightward leg movements. This improved the accuracy of our pose detection.
 
-[TODO: (code snippets of improved forward and backward movements)]
+![](../images/foot_back.png)
+![](../images/foot_front.png)
 
 ## 1.3 Key Mapping and Dance Mat Visualiser
 
 In the superclass of the four gesture classes, Pose, we defined the logic of key mapping and dance mat visualiser. To make sure the action types “key_down” (hold the key) and “key_press” (press the key once) are triggered correctly, we used two boolean variables to track the status of the gestures. The variable “state” turns true when the gesture becomes active and trigger the “key_down” event. As the gesture continues to be active, the variable “activated” will be checked every frame. “activated” will be turned true when “key_pressing” event happens and will remain true throughout the period where the gesture is active so that the “key_pressing” event will only happen once in this period. In the deactivating stage, both variables will be turned false.
 
+![](../images/abstract_pose.png)
+
 The DanceMatVisualiser class we created is a singleton class which defines the logic to draw the dance mat display elements on the upper left corner of the MI window and change the colour of the display elements when the gestures become active. The instance of DanceMatVIsualiser is created in Pose to update the display elements when the status of the gestures changes.
 
-[TODO: (code snippets here)]
+![](../images/dance_mat_visualiser.png)
 
 # 2. In-Air Action Buttons
 
@@ -139,6 +142,8 @@ Originally, the texts in the buttons were integers that record the number of the
 # 3. Mouse Tracking
 
 In mode_controller.json, we defined two new modes, the left mode and the right mode, which contain our combination of mouse tracking events. The left mode allows users to control the mouse using their left hand while the right mode allows users to control the mouse using their right hand. To trigger a left click, the users need to make a gun shape with their hands, which is to stretch out their thumbs and index fingers and curl the rest of the fingers towards their palms. On the other hand, to trigger a right click, the users need to pitch their middle fingers, which is to put their middle fingers and their thumbs together. The addition of these two modes made the configuration of the virtual dance mat easy.
+
+![](../images/mode_controller.png)
 
 # 4. Configuration Wizard
 

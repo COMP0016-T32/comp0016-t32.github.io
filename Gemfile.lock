@@ -9,6 +9,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    execjs (2.8.1)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
@@ -39,8 +40,13 @@ GEM
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    katex (0.9.0)
+      execjs (~> 2.7)
     kramdown (2.4.0)
       rexml
+    kramdown-math-katex (1.0.1)
+      katex (~> 0.4)
+      kramdown (~> 2.0)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.4)
@@ -67,12 +73,14 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
+  arm64-darwin-20
   arm64-darwin-22
   x64-mingw-ucrt
 
 DEPENDENCIES
   jekyll (~> 4.2)
   jekyll-environment-variables
+  kramdown-math-katex
   webrick (~> 1.7)
 
 BUNDLED WITH

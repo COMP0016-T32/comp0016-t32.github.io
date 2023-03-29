@@ -31,26 +31,20 @@ description: Evaluation
 |19|Integrate the refined hand jitter correction system into every landmark of the hand module|Could|✓|Tina|
 |20|User could set the level of jitter correction/smoothing in the configuration wizard|Could|✗||
 
-## A list of known bugs
-
-| ID | Bug Description | Priority |
-| --- | --- | --- |
-|1| | |
-
 ## Individual contribution distribution table
 
 | Work packages | Dongyeon | Minghui | Tina | Ali |
 | --- | --- | --- | --- | --- |
-| Project partner liasion | | | | |
-| Requirement analysis | | | | |
-| Research and Experiments | | | | |
-| UI Design | | | | |
-| Coding | | | | |
-| Testing | | | | |
-| Report Website | | | | |
-| Video Editing | | | | |
-| Overall contribution | | | | |
-| Main roles | | | | |
+| Project partner liasion | 20 | 20 | 60 | 0 |
+| Requirement analysis | 34 | 33 | 33 | 0 |
+| Research and Experiments | 30 | 34 | 33 | 3 |
+| UI Design | 40 | 40 | 20 | 0 |
+| Coding | 50 | 40 | 10 | 0 |
+| Testing | 40 | 35 | 25 | 0 |
+| Report Website | 15 | 40 | 40 | 5 |
+| Video Editing | 35 | 22 | 43 | 0 |
+| Overall Contribution | 33 | 33 | 33 | 1 |
+| Main roles | Lead Developer, UI Designer, Tester | Lead Developer, UI Designer, Report Editor | Client Liaison, Report Editor, Video Editor | Editor |
 
 # Critical evaluation of the project
 

@@ -164,3 +164,41 @@ When the users are not in the edit mode, the Apply button, which is used to save
 When in the edit mode, the users will only be able to change the key mapping, key action and display of the buttons if the button is selected. Otherwise, those drop down lists and input fields will be disabled. This is to reduce confusion so that the users will not set any buttons that they have not selected.
 
 In adding a new mode window, after the users enter the name for the new controller template, the program checks if the name contains any special characters or if the controller template already exists. This is to prevent errors when creating the json file for the new controller template.
+
+
+# 5. Hand jitter Correction
+
+## 5.1 Smoother Class in Mouse Event Handler
+
+In MotionInput 3.2, the gesture_event_handlers folder already includes desktop_mouse.py for handling cursor movement events. The implementation logic for triggering specific actions based on these events is entirely defined by the update function within the event class. For instance, if the user has just activated the mouse control gesture in the current frame and it was not previously held, the logic of the update function will set it to the "activated" state and execute the corresponding function mapped to the cursor movement event handler. This approach enables us to map user actions to device actions.
+
+The event class "BaseMouse" serves as a generic class for handling cursor movement events. Although the original intention of MI 3.2 codebase was to smooth out the coordinates of the mouse movement, the current implementation only uses the average coordinates of the last few frames. However, there could be alternative and more efficient approaches to achieve this smoothing effect.
+
+## 5.2 Capturing the coordinates from past frames
+
+To implement any smoothing algorithm, we must first obtain the past data of the user's hand position coordinates and feed it into the smoothing function to calculate the averaged value. The primary goal is to create an extra layer of filtering between the RAW mouse coordinates (mapped based on the hand landmarks on the screen) and the output x and y coordinates to effectively move the cursor on the user's device. This additional layer of filtering ensures that the cursor movements are smooth and accurate, providing a better user experience.
+
+To do that, we created a smoothing buffer to store the RAW DATA from past frames, and store it as a NumPy array namely “tracking_points”. Once we have more than three frames’ coordinates we apply the smoothing algorithms – Laplacian smoothing and Gaussian filter.
+
+![](../images/smoother_class.png)
+
+Three coordinates from the past frame can be sufficient for smoothing calculation because they provide enough information to calculate a smoothed position. Averaging out the previous three coordinates can help to eliminate any sudden or jittery movements caused by hand tremors or other factors. Using more coordinates from the past frames could lead to increased processing time and potential lag, without significantly improving the smoothing effect. Additionally, using too many past coordinates may also result in a delayed response to user movements, which could negatively impact the user experience. Therefore, using a small number of coordinates from the past frames can strike a balance between reducing jitter and maintaining responsiveness.
+
+## 5.3 Laplacian smoothing and Gaussian filter
+
+![](../images/smoothing_algorithms.png)
+
+The Python code above implements two different techniques for smoothing tracking points in desktop_mouse.py.
+The first technique is called Laplacian smoothing, and it involves calculating the mean of each tracking point and its neighbours. The implementation works as follows:
+- The tracking points are converted to a NumPy array and stored in the tracking_points variable.
+- A zero-filled NumPy array of the same size as tracking_points is created and stored in smoothed_points.
+- The mean of each point and its neighbors is then computed using the formula (tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3.
+- The computed mean is stored in the corresponding position in the smoothed_points array, except for the first and last points.
+- The first point is smoothed by taking the average of the first two points, and the last point is smoothed by taking the average of the last two points.
+- The function then returns the smoothed_points array.
+
+The second technique is called Gaussian smoothing, and it involves applying a Gaussian filter to the tracking points. The implementation works as follows:
+- The tracking points are converted to a NumPy array and stored in the tracking_points variable.
+- The gaussian_filter function from the SciPy library is applied to the tracking_points array with a sigma value of 1, which determines the width of the Gaussian filter.
+- The smoothed array is then returned by the function.
+Both of these smoothing techniques can be effective for reducing noise and jitter in hand position tracking data, and can improve the overall user experience in MotionInput.

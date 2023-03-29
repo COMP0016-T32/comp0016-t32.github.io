@@ -394,15 +394,15 @@ def gaussian_smoothing(self):
 
 The Python code above implements two different techniques for smoothing tracking points in desktop_mouse.py.
 The first technique is called Laplacian smoothing, and it involves calculating the mean of each tracking point and its neighbours. The implementation works as follows:
-- The tracking points are converted to a NumPy array and stored in the tracking_points variable.
-- A zero-filled NumPy array of the same size as tracking_points is created and stored in smoothed_points.
-- The mean of each point and its neighbors is then computed using the formula (tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3.
+- The tracking points are converted to a NumPy array and stored in the `tracking_points` variable.
+- A zero-filled NumPy array of the same size as `tracking_points` is created and stored in smoothed_points.
+- The mean of each point and its neighbors is then computed using the formula `(tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3`.
 - The computed mean is stored in the corresponding position in the smoothed_points array, except for the first and last points.
 - The first point is smoothed by taking the average of the first two points, and the last point is smoothed by taking the average of the last two points.
 - The function then returns the smoothed_points array.
 
 The second technique is called Gaussian smoothing, and it involves applying a Gaussian filter to the tracking points. The implementation works as follows:
-- The tracking points are converted to a NumPy array and stored in the tracking_points variable.
-- The gaussian_filter function from the SciPy library is applied to the tracking_points array with a sigma value of 1, which determines the width of the Gaussian filter.
+- The tracking points are converted to a NumPy array and stored in the `tracking_points` variable.
+- The gaussian_filter function from the SciPy library is applied to the `tracking_points` array with a sigma value of 1, which determines the width of the Gaussian filter.
 - The smoothed array is then returned by the function.
 Both of these smoothing techniques can be effective for reducing noise and jitter in hand position tracking data, and can improve the overall user experience in MotionInput.

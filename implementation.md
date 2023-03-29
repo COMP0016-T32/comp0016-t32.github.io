@@ -155,18 +155,123 @@ class LeftFootPose(BodyPose):
 
 After defining the criteria to determine if the gestures are active, we encountered another problem, which was the incorrect gesture would be triggered sometimes. For example, when the users move their leg forward, the leftward leg movement will be triggered instead. To solve the problem, we decided to add more conditions when determining the score for the gestures. In the end, we changed the algorithms so that the forward and backward leg movements will only be determined as active if they fulfil the criteria of the forward and backward leg movements and do not fulfil the criteria of the leftward and rightward leg movements. This improved the accuracy of our pose detection.
 
-![](../images/foot_back.png)
-![](../images/foot_front.png)
+```python
+class BackFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            left_leg_movement = landmarks["left_ankle"][0] - landmarks["left_hip"][0]
+            right_leg_movement = landmarks["right_hip"][0] - landmarks["right_ankle"][0]
+            legs_depth_diff = landmarks["left_foot_index"][2] - landmarks["right_foot_index"][2]
+            self.score = int(left_leg_movement <= 50 and legs_depth_diff > 0.13 and right_leg_movement <= 25)
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+```python
+class BackFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            left_leg_movement = landmarks["left_ankle"][0] - landmarks["left_hip"][0]
+            right_leg_movement = landmarks["right_hip"][0] - landmarks["right_ankle"][0]
+            legs_depth_diff = landmarks["left_foot_index"][2] - landmarks["right_foot_index"][2]
+            self.score = int(left_leg_movement <= 50 and legs_depth_diff > 0.13 and right_leg_movement <= 25)
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+<!-- ![](../images/foot_back.png)
+![](../images/foot_front.png) -->
 
 ## 1.3 Key Mapping and Dance Mat Visualiser
 
 In the superclass of the four gesture classes, Pose, we defined the logic of key mapping and dance mat visualiser. To make sure the action types “key_down” (hold the key) and “key_press” (press the key once) are triggered correctly, we used two boolean variables to track the status of the gestures. The variable “state” turns true when the gesture becomes active and trigger the “key_down” event. As the gesture continues to be active, the variable “activated” will be checked every frame. “activated” will be turned true when “key_pressing” event happens and will remain true throughout the period where the gesture is active so that the “key_pressing” event will only happen once in this period. In the deactivating stage, both variables will be turned false.
 
-![](../images/abstract_pose.png)
+```python
+class Pose:
+    _keyboard = Keyboard()
+    _mouse = BaseMouse()
+
+    def check_trigger(self, *args, **kwargs) -> None:
+        if self.state and not self.activated:
+            self.activated = True
+            if self.action == "key_press":
+                switch_visualiser(True, *self.args)
+                self._keyboard.key_press(*self.args)
+
+    def activate(self, *args, **kwargs) -> None:
+        """
+        Activate the action.
+        """
+
+        self.state = True
+        self.check_trigger()
+        switch_visualiser(True, *self.args)
+
+        if self.action == "key_down":
+            self._keyboard.key_down(*self.args)
+        elif self.action == "mouse_up":
+            self._mouse.move_cursor_relative(0, -10)
+        elif self.action == "mouse_down":
+            self._mouse.move_cursor_relative(0, 10)
+        elif self.action == "mouse_left":
+            self._mouse.move_cursor_relative(-10, 0)
+        elif self.action == "mouse_right":
+            self._mouse.move_cursor_relative(10, 0)
+
+    def deactivate(self, *args, **kwargs) -> None:
+        """
+        Deactivate the action.
+        """
+
+        self.state = False
+        self.activated = False
+        mouse_actions = ["mouse_up", "mouse_down", "mouse_left", "mouse_right"]
+        if self.action == "key_down":
+            switch_visualiser(False, *self.args)
+            self._keyboard.key_up(*self.args)
+        elif self.action == 'key_press':
+            switch_visualiser(False, *self.args)
+        elif self.action in mouse_actions:
+            switch_visualiser(False, *self.args)
+```
+<!-- ![](../images/abstract_pose.png) -->
 
 The DanceMatVisualiser class we created is a singleton class which defines the logic to draw the dance mat display elements on the upper left corner of the MI window and change the colour of the display elements when the gestures become active. The instance of DanceMatVIsualiser is created in Pose to update the display elements when the status of the gestures changes.
 
-![](../images/dance_mat_visualiser.png)
+```python
+class DanceMatVisualiser:
+    def __init__(self):
+        self.elem = DanceMatCirclesElement()
+        self.data = {
+            "foot_left": ((120, 80), (170, 130), False, '>'),
+            "foot_right": ((20, 80), (70, 130), False, '<'),
+            "foot_back": ((70, 130), (120, 180), False, 'v'),
+            "foot_front": ((70, 30), (120, 80), False, '^'),
+        }
+        self.elem.update(self.data)
+
+    def switch_colour(self, key: str, on: bool) -> tuple:
+        temp = list(self.data[key])
+        temp[2] = on
+        return tuple(temp)
+
+    def update(self, src: dict[str, tuple]):
+        for name, info in src.items():
+            self.data[name] = info
+        self.elem.update(self.data)
+
+    def visualise(self, frame: np.ndarray):
+        self.elem.update_display(frame)
+
+
+dance_mat_visualiser = DanceMatVisualiser()
+```
+
+<!-- ![](../images/dance_mat_visualiser.png) -->
 
 # 2. In-Air Action Buttons
 
@@ -191,7 +296,25 @@ Originally, the texts in the buttons were integers that record the number of the
 
 In mode_controller.json, we defined two new modes, the left mode and the right mode, which contain our combination of mouse tracking events. The left mode allows users to control the mouse using their left hand while the right mode allows users to control the mouse using their right hand. To trigger a left click, the users need to make a gun shape with their hands, which is to stretch out their thumbs and index fingers and curl the rest of the fingers towards their palms. On the other hand, to trigger a right click, the users need to pitch their middle fingers, which is to put their middle fingers and their thumbs together. The addition of these two modes made the configuration of the virtual dance mat easy.
 
-![](../images/mode_controller.png)
+```json
+{
+    "left": [
+            "hand_palm_height_change_aoi_resize_left_hand",
+            "hand_palm_center_move_mouse_left_hand",
+            "hand_gun_left_press_left_hand",
+            "hand_middle_pinch_right_press_left_hand"
+        ],
+    "right": [
+            "hand_gun_left_press_right_hand",
+            "hand_palm_center_move_mouse_right_hand",
+            "hand_middle_pinch_right_press_right_hand",
+            "hand_palm_height_change_aoi_resize_right_hand"
+        ]
+}
+```
+
+<!-- ![](../images/mode_controller.png) -->
+
 
 # 4. Configuration Wizard
 

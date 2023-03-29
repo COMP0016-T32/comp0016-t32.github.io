@@ -12,6 +12,7 @@ title: 'MI FeetNav'
 #   desktop_width: "120px"
 
 markdown: kramdown
+highlighter: rouge
 kramdown:
   math_engine: katex
 

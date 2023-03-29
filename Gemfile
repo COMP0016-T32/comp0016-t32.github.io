@@ -8,3 +8,5 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do
     gem "kramdown-math-katex"
 end
+
+gem "rouge", "~> 4.1"

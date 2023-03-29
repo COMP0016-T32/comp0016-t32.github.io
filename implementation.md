@@ -351,7 +351,7 @@ To implement any smoothing algorithm, we must first obtain the past data of the 
 
 To do that, we created a smoothing buffer to store the RAW DATA from past frames, and store it as a NumPy array namely “tracking_points”. Once we have more than three frames’ coordinates we apply the smoothing algorithms – Laplacian smoothing and Gaussian filter.
 
-```
+```python
 class Smoother:
     def __init__(self, smoothing_frames: int):
         self._smoothing_buffer = deque(maxlen=smoothing_frames)
@@ -375,7 +375,7 @@ Three coordinates from the past frame can be sufficient for smoothing calculatio
 
 ## 5.3 Laplacian smoothing and Gaussian filter
 
-```
+```python
     def laplacian_smoothing(self):
         """Smooth the tracking points using the mean of each point and its neighbors"""
         tracking_points = np.array(self._smoothing_buffer)

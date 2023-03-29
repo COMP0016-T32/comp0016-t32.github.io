@@ -6,11 +6,45 @@ description: Evaluation
 
 # Summary of Achievements
 
-## An achievement table to list the MoSCoW functionalities, the completed states, and contributors
+## Final MoSCoW Requirements Review
 
-## A list of known bugs
+| ID | Requirement | Priority | State | Contributors |
+| --- | --- | --- | --- | --- |
+|1|Dance-mat like interface that allows users to play games with their feets|Must|✓|Dongyeon, Minghui, Tina, Team 26|
+|2|Mouse mode of the virtual dance mat|Must|✓|Minghui|
+|3|Make the virtual dance mat compatible with both the standing and sitting scenario|Must|✓|Dongyeon|
+|4|Pose recognition algorithm|Must|✓|Dongyeon, Minghui|
+|5|Map gestures to keyboard or mouse events|Must|✓|Dongyeon, Minghui|
+|6|Define the range of hand movements that need to be corrected, the speed and accuracy of correction|Must|✓|Tina|
+|7|Select the appropriate technology to achieve the required level of hand jitter correction. Prerequisite is the use of Mideapipe library|Must|✓|Tina|
+|8|Develop the hand jitter correction system, integrating the chosen technology into the mouse control layer of MotionInput 3.2|Must|✓|Tina|
+|9|Best pose detection for the virtual dance mat|Should|✓|Dongyeon, Minghui|
+|10|Dance mat visualiser|Should|✓|Dongyeon, Minghui|
+|11|New display key for in-air action buttons|Should|✓|Dongyeon, Minghui|
+|12|Configuration wizard to allow users to customise FeetNav features|Should|✓|Dongyeon, Minghui|
+|13|Use design principles to optimise the configuration wizard|Should|✓|Dongyeon|
+|14|Intuitive and aesthetically pleasing design|Should|✓|Dongyeon, Minghui|
+|15|Eliminate edge cases to optimise user experience|Should|✓|Dongyeon, Minghui|
+|16|Test the hand jitter correction to ensure that it meets the defined requirements. Evaluate the system's accuracy, speed, and user experience|Should|✓|Tina|
+|17|Refine the hand jitter correction system based on the testing results|Should|✓|Tina|
+|18|New display element for in-air action buttons|Could|✓|Dongyeon|
+|19|Integrate the refined hand jitter correction system into every landmark of the hand module|Could|✓|Tina|
+|20|User could set the level of jitter correction/smoothing in the configuration wizard|Could|✗||
 
 ## Individual contribution distribution table
+
+| Work packages | Dongyeon | Minghui | Tina | Ali |
+| --- | --- | --- | --- | --- |
+| Project partner liasion | 20 | 20 | 60 | 0 |
+| Requirement analysis | 34 | 33 | 33 | 0 |
+| Research and Experiments | 30 | 34 | 33 | 3 |
+| UI Design | 40 | 40 | 20 | 0 |
+| Coding | 50 | 40 | 10 | 0 |
+| Testing | 40 | 35 | 25 | 0 |
+| Report Website | 15 | 40 | 40 | 5 |
+| Video Editing | 35 | 22 | 43 | 0 |
+| Overall Contribution | 33 | 33 | 33 | 1 |
+| Main roles | Lead Developer, UI Designer, Tester | Lead Developer, UI Designer, Report Editor | Client Liaison, Report Editor, Video Editor | Editor |
 
 # Critical evaluation of the project
 

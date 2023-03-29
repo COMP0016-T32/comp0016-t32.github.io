@@ -19,12 +19,12 @@ bodyClass: 'page-home'
           />
         </div>
         {% endif %}
-        <h2 class="feature-title"">
-        {% if feature.url %}
-        <a href="{{ feature.url }}">{{ feature.title }}</a>
-        {% else %}
-        {{ feature.title }}
-        {% endif %}
+        <h2 class="feature-title">
+          {% if feature.url %} {% if feature.url contains "https" %}
+          <a href="{{ feature.url }}">{{ feature.title }}</a>
+          {% else %}
+          <a href="{{ site.baseurl }}/{{ feature.url }}">{{ feature.title }}</a>
+          {% endif %} {% else %} {{ feature.title }} {% endif %}
         </h2>
         <!-- <div class="feature-content">{{ feature.description }}</div> -->
       </div>

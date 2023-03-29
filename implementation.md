@@ -376,19 +376,19 @@ Three coordinates from the past frame can be sufficient for smoothing calculatio
 ## 5.3 Laplacian smoothing and Gaussian filter
 
 ```python
-    def laplacian_smoothing(self):
-        """Smooth the tracking points using the mean of each point and its neighbors"""
-        tracking_points = np.array(self._smoothing_buffer)
-        smoothed_points = np.zeros(tracking_points.shape)
-        smoothed_points[1:-1] = (tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3
-        smoothed_points[0] = (tracking_points[0] + tracking_points[1]) / 2
-        smoothed_points[-1] = (tracking_points[-1] + tracking_points[-2]) / 2
+def laplacian_smoothing(self):
+    """Smooth the tracking points using the mean of each point and its neighbors"""
+    tracking_points = np.array(self._smoothing_buffer)
+    smoothed_points = np.zeros(tracking_points.shape)
+    smoothed_points[1:-1] = (tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3
+    smoothed_points[0] = (tracking_points[0] + tracking_points[1]) / 2
+    smoothed_points[-1] = (tracking_points[-1] + tracking_points[-2]) / 2
 
-        return smoothed_points
+    return smoothed_points
 
-    def gaussian_smoothing(self):
-        tracking_points = np.array(self._smoothing_buffer)
-        return gaussian_filter(tracking_points, sigma=1)
+def gaussian_smoothing(self):
+    tracking_points = np.array(self._smoothing_buffer)
+    return gaussian_filter(tracking_points, sigma=1)
 ```
 
 

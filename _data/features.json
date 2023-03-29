@@ -2,6 +2,7 @@
   {
     "title": "User manual",
     "description": "New clients receive an obligation free consultation.",
+    "url": "user-manual",
     "image": {
       "url": "images/features/noun_branding_1885335.svg",
       "width": 80,
@@ -9,17 +10,9 @@
     }
   },
   {
-    "title": "Deployment manual",
-    "description": "All members of our team are certified accountants.",
-    "image": {
-      "url": "images/features/noun_The Process_1885341.svg",
-      "width": 80,
-      "height": 80
-    }
-  },
-  {
     "title": "Legal issues and processes",
     "description": "We stay up to date on the latest changes to the tax code.",
+    "url": "legal-issues-and-processes",
     "image": {
       "url": "images/features/noun_3d modeling_1885342.svg",
       "width": 80,
@@ -31,7 +24,7 @@
     "description": "We stay up to date on the latest changes to the tax code.",
     "url": "https://comp0016-t32.github.io/blog/",
     "image": {
-      "url": "images/features/noun_3d modeling_1885342.svg",
+      "url": "images/features/noun_The Process_1885341.svg",
       "width": 80,
       "height": 80
     }
@@ -39,6 +32,7 @@
   {
     "title": "Monthly Video",
     "description": "We stay up to date on the latest changes to the tax code.",
+    "url": "https://youtu.be/XrQteSX7Fos",
     "image": {
       "url": "images/features/noun_3d modeling_1885342.svg",
       "width": 80,

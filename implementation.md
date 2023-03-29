@@ -98,10 +98,58 @@ In these tests, we define accuracy as the user’s action will be recognised as 
 
 Combining the results of the two tests, we developed the following algorithms for the four gestures.
 
-![](../images/foot_back_before.png)
+```python
+class BackFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            legs_depth_diff = landmarks["right_foot_index"][2] - landmarks["left_foot_index"][2]
+            self.score = int(legs_depth_diff < -0.15)
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+```python
+class FrontFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            legs_depth_diff = landmarks["right_foot_index"][2] - landmarks["left_foot_index"][2]
+            self.score = int(legs_depth_diff > 0.15) 
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+```python
+class RightFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            right_leg_movement = landmarks["right_hip"][0] - landmarks["right_ankle"][0]
+            self.score = int(right_leg_movement > 25)
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+```python
+class LeftFootPose(BodyPose):
+    def check(self, landmarks: dict) -> bool:
+        try:
+            left_leg_movement = landmarks["left_ankle"][0] - landmarks["left_hip"][0]
+            self.score = int(left_leg_movement > 50)
+        except KeyError:
+            self.score = 0
+
+        return self.score == 1
+```
+
+<!-- ![](../images/foot_back_before.png)
 ![](../images/foot_front_before.png)
 ![](../images/foot_right.png)
-![](../images/foot_left.png)
+![](../images/foot_left.png) -->
 
 ## 1.2 Best Pose Detection
 

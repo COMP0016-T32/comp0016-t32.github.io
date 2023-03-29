@@ -228,13 +228,46 @@ To implement any smoothing algorithm, we must first obtain the past data of the 
 
 To do that, we created a smoothing buffer to store the RAW DATA from past frames, and store it as a NumPy array namely “tracking_points”. Once we have more than three frames’ coordinates we apply the smoothing algorithms – Laplacian smoothing and Gaussian filter.
 
-![](../images/smoother_class.png)
+```
+class Smoother:
+    def __init__(self, smoothing_frames: int):
+        self._smoothing_buffer = deque(maxlen=smoothing_frames)
+
+    def smooth(self, val: float) -> float:
+        # averages the value over given number of past frames
+        # TODO: could be implemented more efficiently by tracking the sum
+        self._smoothing_buffer.append(val)
+        smoothed_points = self._smoothing_buffer
+        if len(self._smoothing_buffer) > 3:
+            smoothed_points = self.gaussian_smoothing()
+            smoothed_points = self.laplacian_smoothing()
+        sum = 0
+        for v in smoothed_points:
+            sum += v
+        coord = sum / len(self._smoothing_buffer)
+        return coord
+```
 
 Three coordinates from the past frame can be sufficient for smoothing calculation because they provide enough information to calculate a smoothed position. Averaging out the previous three coordinates can help to eliminate any sudden or jittery movements caused by hand tremors or other factors. Using more coordinates from the past frames could lead to increased processing time and potential lag, without significantly improving the smoothing effect. Additionally, using too many past coordinates may also result in a delayed response to user movements, which could negatively impact the user experience. Therefore, using a small number of coordinates from the past frames can strike a balance between reducing jitter and maintaining responsiveness.
 
 ## 5.3 Laplacian smoothing and Gaussian filter
 
-![](../images/smoothing_algorithms.png)
+```
+    def laplacian_smoothing(self):
+        """Smooth the tracking points using the mean of each point and its neighbors"""
+        tracking_points = np.array(self._smoothing_buffer)
+        smoothed_points = np.zeros(tracking_points.shape)
+        smoothed_points[1:-1] = (tracking_points[:-2] + tracking_points[1:-1] + tracking_points[2:]) / 3
+        smoothed_points[0] = (tracking_points[0] + tracking_points[1]) / 2
+        smoothed_points[-1] = (tracking_points[-1] + tracking_points[-2]) / 2
+
+        return smoothed_points
+
+    def gaussian_smoothing(self):
+        tracking_points = np.array(self._smoothing_buffer)
+        return gaussian_filter(tracking_points, sigma=1)
+```
+
 
 The Python code above implements two different techniques for smoothing tracking points in desktop_mouse.py.
 The first technique is called Laplacian smoothing, and it involves calculating the mean of each tracking point and its neighbours. The implementation works as follows:

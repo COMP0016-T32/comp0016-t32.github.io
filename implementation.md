@@ -290,7 +290,8 @@ When we first replaced the original buttons with the images we designed, we foun
 
 Originally, the texts in the buttons were integers that record the number of the times that the buttons are pressed. This was very hard for the users to understand and did not convey any information of which keys the buttons were mapped to. Hence, we decided to add a new display key to the buttons so that they display the key that they are mapped to. A new displaykey parameter in the json files that record the parameters of the buttons, and the displaykey parameter is loaded from the json files and provided as input to the display element function of the in-air action buttons. 
 
-[TODO: (original buttons with counters)]
+![](../images/buttons_with_counter.png)
+***Original version of the in-air action buttons with counters***
 
 # 3. Mouse Tracking
 

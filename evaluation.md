@@ -35,7 +35,7 @@ description: Evaluation
 
 | Work packages | Dongyeon | Minghui | Tina | Ali |
 | --- | --- | --- | --- | --- |
-| Project partner liasion | 20 | 20 | 60 | 0 |
+| Project partner liaison | 20 | 20 | 60 | 0 |
 | Requirement analysis | 34 | 33 | 33 | 0 |
 | Research and Experiments | 30 | 34 | 33 | 3 |
 | UI Design | 40 | 40 | 20 | 0 |

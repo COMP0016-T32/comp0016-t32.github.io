@@ -36,7 +36,7 @@ bundle exec jekyll build
 
 There will be `_site` directory generated in the root directory.
 
-**However**, notice that the website is designed to be deployed in [our project web server](https://students.cs.ucl.ac.uk/2022/group32/), so the styling looks cracked when opening `index.html` in the browser directly. Please either visit the [website](https://students.cs.ucl.ac.uk/2022/group32/) or run the local server by running `bundle exec jekyll serve`.
+**However**, notice that the website is designed to be deployed in the web server, so the styling will look cracked when opening `index.html` in the browser directly. This is obvious, so please either visit the [website](https://students.cs.ucl.ac.uk/2022/group32/) or run the local server by running `bundle exec jekyll serve`.
 
 ## How to write a blog post
 

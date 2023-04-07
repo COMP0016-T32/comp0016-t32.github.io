@@ -36,6 +36,8 @@ bundle exec jekyll build
 
 There will be `_site` directory generated in the root directory.
 
+**However**, notice that the website is designed to be deployed in [our project web server](https://students.cs.ucl.ac.uk/2022/group32/), so the styling looks cracked when opening `index.html` in the browser directly. Please either visit the [website](https://students.cs.ucl.ac.uk/2022/group32/) or run the local server by running `bundle exec jekyll serve`.
+
 ## How to write a blog post
 
 To write a post, find the markdown file that you need to write on in the root directory. For example, if you want to put some content in the requirement section, please find `requirements.md` in the root directory.
